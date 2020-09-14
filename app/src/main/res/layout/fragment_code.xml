@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:fitsSystemWindows="true"
+        android:clipChildren="false"
+        android:animateLayoutChanges="true"
+        app:liftOnScroll="false"
+        app:elevation="0dp"
+        android:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            app:titleMarginStart="60dp"
+            app:titleTextColor="@color/colorAccent"
+            app:layout_collapseMode="pin"
+            app:contentInsetStartWithNavigation="0dp"
+            app:menu="@menu/menu_verify_no_frag">
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/waiting_to_automatically_detect_an_sms_sent_to"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:id="@+id/next_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="@color/colorAccent"
+            android:text="@string/next"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            tools:text="+27 614264266." />
+
+        <TextView
+            android:id="@+id/wrong_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@string/wrong_number"
+            android:textColor="@android:color/holo_blue_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/no"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <EditText
+            android:id="@+id/code1"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:nextFocusRight="@id/code2"
+            android:nextFocusForward="@id/code2"
+            android:singleLine="true"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@+id/code2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/no"
+            tools:text="1" />
+
+        <EditText
+            android:id="@+id/code2"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:nextFocusRight="@id/code3"
+            android:nextFocusForward="@id/code3"
+            android:singleLine="true"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@+id/code3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/code1"
+            app:layout_constraintTop_toBottomOf="@+id/no"
+            tools:text="2" />
+
+        <EditText
+            android:id="@+id/code3"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:nextFocusRight="@id/code4"
+            android:nextFocusForward="@id/code4"
+            android:singleLine="true"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@+id/code4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/code2"
+            app:layout_constraintTop_toBottomOf="@+id/no"
+            tools:text="3" />
+
+        <EditText
+            android:id="@+id/code4"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:nextFocusRight="@id/code5"
+            android:nextFocusForward="@id/code5"
+            android:singleLine="true"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@+id/code5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/code3"
+            app:layout_constraintTop_toBottomOf="@+id/no"
+            tools:text="4" />
+
+        <EditText
+            android:id="@+id/code5"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:nextFocusRight="@id/code6"
+            android:nextFocusForward="@id/code6"
+            android:singleLine="true"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@+id/code6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/code4"
+            app:layout_constraintTop_toBottomOf="@+id/no"
+            tools:text="5" />
+
+        <EditText
+            android:id="@+id/code6"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:nextFocusForward="@id/next_btn"
+            android:singleLine="true"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/code5"
+            app:layout_constraintTop_toBottomOf="@+id/no"
+            tools:text="6" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_6_digit_code"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/code3" />
+
+        <ImageView
+            android:id="@+id/sms_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/sms_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8"
+            app:srcCompat="@drawable/ic_sms_black_24dp" />
+
+        <TextView
+            android:id="@+id/resend_sms_textview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="32dp"
+            android:text="@string/resend_sms_in"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/sms_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/sms_icon"
+            app:layout_constraintTop_toTopOf="@+id/sms_icon"
+            app:layout_constraintVertical_bias="0.3" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sms_icon" />
+
+        <ImageView
+            android:id="@+id/call_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider3"
+            app:srcCompat="@drawable/ic_call_black_24dp"
+            android:contentDescription="@string/call_icon" />
+
+        <TextView
+            android:id="@+id/call_me_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="@string/call_me"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/call_icon"
+            app:layout_constraintStart_toEndOf="@+id/call_icon"
+            app:layout_constraintTop_toTopOf="@+id/call_icon" />
+
+        <TextView
+            android:id="@+id/call_me_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:textSize="14sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/call_me_textview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/call_me_textview"
+            app:layout_constraintTop_toTopOf="@+id/call_me_textview"
+            tools:text="1:57" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,119 @@
+<resources>
+    <!-- Reply Preference -->
+    <string-array name="reply_entries">
+        <item>Reply</item>
+        <item>Reply to all</item>
+    </string-array>
+
+    <string-array name="reply_values">
+        <item>reply</item>
+        <item>reply_all</item>
+    </string-array>
+
+    <!-- Last Seen Preference -->
+    <string-array name="privacy_entries">
+        <item>Everyone</item>
+        <item>My contacts</item>
+        <item>Nobody</item>
+    </string-array>
+
+    <string-array name="privacy_values">
+        <item>everyone</item>
+        <item>my_contacts</item>
+        <item>nobody</item>
+    </string-array>
+
+    <!-- Theme Preference -->
+    <string-array name="theme_entries">
+        <item>Light</item>
+        <item>Dark</item>
+    </string-array>
+
+    <string-array name="theme_values">
+        <item>light</item>
+        <item>dark</item>
+    </string-array>
+
+    <!-- Font size Preference -->
+    <string-array name="font_size_entries">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
+
+    <string-array name="font_size_values">
+        <item>small</item>
+        <item>medium</item>
+        <item>large</item>
+    </string-array>
+
+    <!-- Vibrate Preference -->
+    <string-array name="vibrate_entries">
+        <item>Off</item>
+        <item>Default</item>
+        <item>Short</item>
+        <item>Long</item>
+    </string-array>
+
+    <string-array name="vibrate_values">
+        <item>off</item>
+        <item>default</item>
+        <item>short</item>
+        <item>long</item>
+    </string-array>
+
+    <!-- Popup Noti Preference -->
+    <string-array name="pop_up_entries">
+        <item>No popup</item>
+        <item>Only when screen "on"</item>
+        <item>Only when screen "off"</item>
+        <item>Always show popup</item>
+    </string-array>
+
+    <string-array name="pop_up_values">
+        <item>no_popup</item>
+        <item>screen_on</item>
+        <item>screen_off</item>
+        <item>always_show</item>
+    </string-array>
+
+    <!-- Light Preference -->
+    <string-array name="light_entries">
+        <item>None</item>
+        <item>White</item>
+        <item>Red</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>Cyan</item>
+        <item>Blue</item>
+        <item>Purple</item>
+    </string-array>
+
+    <string-array name="light_values">
+        <item>none</item>
+        <item>white</item>
+        <item>red</item>
+        <item>yellow</item>
+        <item>green</item>
+        <item>cyan</item>
+        <item>blue</item>
+        <item>purple</item>
+    </string-array>
+
+    <!-- Media Preference -->
+    <string-array name="media_entries">
+        <item>Photos</item>
+        <item>Audio</item>
+        <item>Videos</item>
+        <item>Documents</item>
+    </string-array>
+
+    <string-array name="media_values">
+        <item>photos</item>
+        <item>audio</item>
+        <item>videos</item>
+        <item>documents</item>
+    </string-array>
+
+
+</resources>

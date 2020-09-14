@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <fraction name="horizontal_bias1">1.0</fraction>
+
+    <fraction name="horizontal_bias_1">1.0</fraction>
+    <fraction name="horizontal_bias_0">0.0</fraction>
+
+</resources>

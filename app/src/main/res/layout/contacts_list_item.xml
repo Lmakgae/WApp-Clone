@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="side"
+            type="String" />
+        <variable
+            name="contact"
+            type="com.hlogi.wappclone.contacts.data.model.Contact" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/contact_image_iv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/circular_bg"
+            android:backgroundTint="#E1E1E1"
+            app:imageUrl="@{contact.profile_photo_url}"
+            app:placeholder="@{@drawable/ic_person_24dp}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:src="@drawable/ic_person_24dp" />
+
+        <TextView
+            android:id="@+id/contact_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:singleLine="true"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="@{contact.display_name}"
+            app:layout_constraintBottom_toTopOf="@+id/contact_status"
+            app:layout_constraintEnd_toStartOf="@+id/contact_call_ic"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/contact_image_iv"
+            app:layout_constraintTop_toTopOf="@+id/contact_image_iv"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Lehlogonolo Makgae" />
+
+        <TextView
+            android:id="@+id/contact_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:singleLine="true"
+            android:text="@{contact.status}"
+            android:visibility="@{contact.status.empty ? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@+id/contact_image_iv"
+            app:layout_constraintEnd_toStartOf="@+id/contact_call_ic"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/contact_image_iv"
+            app:layout_constraintTop_toBottomOf="@+id/contact_name"
+            tools:text="Hey there! I am using WhatsApp."
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/contact_call_ic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:visibility="@{side.equals(@string/chats_t) ? View.GONE : View.VISIBLE}"
+            android:background="@drawable/ic_call_white_24dp"
+            android:foreground="@drawable/ic_call_white_24dp"
+            android:foregroundTint="?attr/colorAccent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/contact_video_call_ic"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/contact_video_call_ic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/ic_videocam_white_24dp"
+            android:foreground="@drawable/ic_videocam_white_24dp"
+            android:foregroundTint="?attr/colorAccent"
+            android:visibility="@{side.equals(@string/chats_t) ? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

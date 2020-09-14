@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <external-files-path name="my_images" path="Android/data/com.hlogi.wappclone/media/Images" />
+    <external-files-path name="images" path="WAppClone/Media/WAppCloneImages/" />
+    <external-files-path name="voice_notes" path="WAppClone/Media/WAppCloneVoice/" />
+    <external-path
+        name="images"
+        path="WApp Clone/Media/WApp Clone Images/" />
+    <external-path
+        name="voice_notes"
+        path="WApp Clone/Media/WApp Clone Voice Notes/" />
+    <external-path
+        name="videos"
+        path="WApp Clone/Media/WApp Clone Video/" />
+    <external-path
+        name="profile_photos"
+        path="WApp Clone/Media/WApp Clone Profile Photos/" />
+</paths>

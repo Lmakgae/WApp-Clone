@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="contact"
+            type="com.hlogi.wappclone.contacts.data.model.Contact" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/pro_pic_iv"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:adjustViewBounds="true"
+            android:background="@color/colorWhite"
+            android:backgroundTint="#E1E1E1"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{contact.profile_photo_url}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:placeholder="@{@drawable/ic_person_24dp}"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/screen_background_dark_transparent"
+            android:paddingStart="5dp"
+            android:paddingTop="3dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="3dp"
+            android:text="@{contact.display_name}"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/pro_pic_iv"
+            app:layout_constraintStart_toStartOf="@+id/pro_pic_iv"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Lehlogonolo Makgae" />
+
+        <ImageView
+            android:id="@+id/message_iv"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="?attr/viewProfileDialogBackground"
+            android:foreground="@drawable/ic_comment_green_24dp"
+            android:foregroundGravity="center"
+            android:foregroundTint="?attr/viewProfileDialogIconTint"
+            app:layout_constraintEnd_toStartOf="@+id/call_iv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@+id/pro_pic_iv"
+            app:layout_constraintTop_toBottomOf="@+id/pro_pic_iv" />
+
+        <ImageView
+            android:id="@+id/call_iv"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="?attr/viewProfileDialogBackground"
+            android:foreground="@drawable/ic_call_green_24dp"
+            android:foregroundGravity="center"
+            android:foregroundTint="?attr/viewProfileDialogIconTint"
+            app:layout_constraintEnd_toStartOf="@+id/video_call_iv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/message_iv"
+            app:layout_constraintTop_toBottomOf="@+id/pro_pic_iv" />
+
+        <ImageView
+            android:id="@+id/video_call_iv"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="?attr/viewProfileDialogBackground"
+            android:foreground="@drawable/ic_videocam_green_24dp"
+            android:foregroundGravity="center"
+            android:foregroundTint="?attr/viewProfileDialogIconTint"
+            app:layout_constraintEnd_toStartOf="@+id/info_iv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/call_iv"
+            app:layout_constraintTop_toBottomOf="@+id/pro_pic_iv" />
+
+        <ImageView
+            android:id="@+id/info_iv"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="?attr/viewProfileDialogBackground"
+            android:foreground="@drawable/ic_info_green_24"
+            android:foregroundGravity="center"
+            android:foregroundTint="?attr/viewProfileDialogIconTint"
+            app:layout_constraintEnd_toEndOf="@+id/pro_pic_iv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/video_call_iv"
+            app:layout_constraintTop_toBottomOf="@+id/pro_pic_iv" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

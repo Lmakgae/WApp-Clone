@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="appOverlay" format="reference" />
+
+    <attr name="mainBackground" format="color" />
+    <attr name="mainTabSelected" format="color" />
+
+    <attr name="downIconBackground" format="color" />
+    <attr name="messagesNotificationsColor" format="color" />
+    <attr name="messagesBackground" format="color" />
+
+    <attr name="incomingChatBubble" format="reference" />
+    <attr name="outgoingChatBubble" format="reference" />
+
+    <attr name="viewProfileDialogBackground" format="color" />
+    <attr name="viewProfileDialogIconTint" format="color" />
+
+
+
+</resources>

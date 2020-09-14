@@ -1,0 +1,2 @@
+rootProject.name='WApp Clone'
+include ':app'

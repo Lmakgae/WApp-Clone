@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    TODO: Customize the search bar button-->
+<!--    <item-->
+<!--        android:id="@+id/menu_contacts_search"-->
+<!--        android:icon="@drawable/ic_search_white_24dp"-->
+<!--        android:title="@string/search"-->
+<!--        app:showAsAction="always" />-->
+    <item
+        android:id="@+id/menu_contact_invite"
+        android:title="@string/invite_a_friend" />
+    <item
+        android:id="@+id/menu_contacts_contacts"
+        android:title="@string/contacts" />
+    <item
+        android:id="@+id/menu_contacts_refresh"
+        android:title="@string/refresh" />
+    <item
+        android:id="@+id/menu_contacts_help"
+        android:title="@string/help" />
+</menu>

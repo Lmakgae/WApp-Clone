@@ -1,0 +1,65 @@
+<resources>
+
+    <!-- Light application theme. -->
+    <style name="AppThemeLight" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="appOverlay">@style/AppThemeLight.AppBarOverlay</item>
+
+        <item name="mainBackground">@color/colorWhite</item>
+        <item name="mainTabSelected">@color/colorWhite</item>
+
+        <item name="viewProfileDialogBackground">@color/colorWhite</item>
+        <item name="viewProfileDialogIconTint">@color/colorPrimary</item>
+
+        <!--Messages Fragment        -->
+        <item name="messagesNotificationsColor">@color/colorPrimary</item>
+        <item name="messagesBackground">@color/colorChatBackground</item>
+        <item name="downIconBackground">@color/colorWhite</item>
+        <item name="incomingChatBubble">@color/colorWhite</item>
+        <item name="outgoingChatBubble">@color/colorOutgoingChatBubble</item>
+
+    </style>
+
+    <style name="AppThemeLight.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppThemeLight.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppThemeLight.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+
+    <!-- Dark application theme. -->
+    <style name="AppThemeDark" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/colorPrimaryAlternate</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAlternate</item>
+        <item name="colorAccent">@color/colorAccentAlternate</item>
+
+        <item name="mainBackground">@color/colorPrimaryDarkAlternate</item>
+        <item name="mainTabSelected">@color/colorAccentAlternate</item>
+
+        <item name="viewProfileDialogBackground">@color/colorPrimaryAlternate</item>
+        <item name="viewProfileDialogIconTint">@color/colorAccentAlternate</item>
+
+        <!--Messages Fragment        -->
+        <item name="messagesNotificationsColor">@color/colorPrimaryAlternate</item>
+        <item name="messagesBackground">@color/colorPrimaryDarkAlternate</item>
+        <item name="downIconBackground">@color/colorPrimaryAlternate</item>
+        <item name="incomingChatBubble">@color/colorPrimaryAlternate</item>
+        <item name="outgoingChatBubble">@color/colorOutgoingChatBubbleAlternate</item>
+
+    </style>
+
+    <style name="AppThemeDark.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+
+    <style name="CircularDeterminateProgressBar">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/circle_progress_bar</item>
+    </style>
+
+</resources>

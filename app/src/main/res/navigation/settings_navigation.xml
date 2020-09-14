@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/settings_navigation.xml"
+    app:startDestination="@id/settingsFragment">
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.hlogi.wappclone.settings.ui.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_recycleViewFragment"
+            app:destination="@id/recycleViewFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_chatsPreferenceFragment"
+            app:destination="@id/chatsPreferenceFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_notificationsPreferenceFragment"
+            app:destination="@id/notificationsPreferenceFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_dataStorageUsagePreferenceFragment"
+            app:destination="@id/dataStorageUsagePreferenceFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recycleViewFragment"
+        android:name="com.hlogi.wappclone.settings.ui.RecycleViewFragment"
+        android:label="RecycleViewFragment"
+        tools:layout="@layout/fragment_recycleview">
+        <action
+            android:id="@+id/action_recycleViewFragment_to_appInfoFragment"
+            app:destination="@id/appInfoFragment" />
+        <action
+            android:id="@+id/action_recycleViewFragment_to_contactUsFragment"
+            app:destination="@id/contactUsFragment" />
+        <action
+            android:id="@+id/action_recycleViewFragment_to_securityFragment"
+            app:destination="@id/securityFragment" />
+        <action
+            android:id="@+id/action_recycleViewFragment_to_privacyFragment"
+            app:destination="@id/privacyFragment" />
+        <action
+            android:id="@+id/action_recycleViewFragment_to_deleteMyNumberFragment"
+            app:destination="@id/deleteMyNumberFragment" />
+        <action
+            android:id="@+id/action_recycleViewFragment_to_changeNumberFragment"
+            app:destination="@id/changeNumberFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/appInfoFragment"
+        android:name="com.hlogi.wappclone.settings.ui.AppInfoFragment"
+        android:label="@string/app_info"
+        tools:layout="@layout/fragment_app_info"/>
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="com.hlogi.wappclone.settings.ui.ContactUsFragment"
+        android:label="@string/contact_us"
+        tools:layout="@layout/fragment_contact_us"/>
+    <fragment
+        android:id="@+id/securityFragment"
+        android:name="com.hlogi.wappclone.settings.ui.SecurityFragment"
+        android:label="@string/security"
+        tools:layout="@layout/fragment_security"/>
+    <fragment
+        android:id="@+id/privacyFragment"
+        android:name="com.hlogi.wappclone.settings.preference_screens.PrivacyFragment"
+        android:label="@string/privacy"
+        />
+    <fragment
+        android:id="@+id/chatsPreferenceFragment"
+        android:name="com.hlogi.wappclone.settings.preference_screens.ChatsPreferenceFragment"
+        android:label="@string/chats"
+        />
+    <fragment
+        android:id="@+id/dataStorageUsagePreferenceFragment"
+        android:name="com.hlogi.wappclone.settings.preference_screens.DataStorageUsagePreferenceFragment"
+        android:label="@string/data_and_storage_usage" />
+    <fragment
+        android:id="@+id/notificationsPreferenceFragment"
+        android:name="com.hlogi.wappclone.settings.preference_screens.NotificationsPreferenceFragment"
+        android:label="@string/notifications" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.hlogi.wappclone.settings.ui.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_fragmentAbout"
+            app:destination="@id/fragmentAbout" />
+        <action
+            android:id="@+id/action_profileFragment_to_changeNumberFragment"
+            app:destination="@id/changeNumberFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_viewProfilePictureFragment2"
+            app:destination="@id/viewProfilePictureFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAbout"
+        android:name="com.hlogi.wappclone.settings.ui.AboutFragment"
+        android:label="@string/about"
+        tools:layout="@layout/fragment_about"/>
+    <fragment
+        android:id="@+id/deleteMyNumberFragment"
+        android:name="com.hlogi.wappclone.settings.ui.DeleteMyAccountFragment"
+        android:label="@string/delete_my_account"
+        tools:layout="@layout/fragment_delete_my_account"/>
+    <fragment
+        android:id="@+id/changeNumberFragment"
+        android:name="com.hlogi.wappclone.settings.ui.ChangeNumberFragment"
+        android:label="@string/change_number"
+        tools:layout="@layout/fragment_change_number"/>
+    <fragment
+        android:id="@+id/viewProfilePictureFragment2"
+        android:name="com.hlogi.wappclone.ui.ViewProfilePictureFragment"
+        android:label="@string/profile_photo"
+        tools:layout="@layout/fragment_view_profile_picture"/>
+</navigation>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Display"
+        app:key="display_category"
+        app:iconSpaceReserved="false">
+
+        <ListPreference
+            android:defaultValue="light"
+            android:entries="@array/theme_entries"
+            android:entryValues="@array/theme_values"
+            android:icon="@drawable/ic_brightness_6_24dp"
+            android:key="theme_key"
+            android:title="Theme"
+            app:useSimpleSummaryProvider="true" />
+        <Preference
+            android:icon="@drawable/ic_wallpaper_24"
+            android:title="Wallpaper" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Chat settings"
+        app:allowDividerBelow="true"
+        app:iconSpaceReserved="false"
+        app:key="chat_settings_category">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="enter_is_send_key"
+            android:summary="Enter key will send your message"
+            android:title="Enter is send" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="media_visibility"
+            android:summary="Show newly downloaded media in your phone's gallery"
+            android:title="Media visibility" />
+
+        <ListPreference
+            android:defaultValue="medium"
+            android:entries="@array/font_size_entries"
+            android:entryValues="@array/font_size_values"
+            android:key="font_size_key"
+            android:title="Font size"
+            app:allowDividerBelow="true"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <Preference
+        android:icon="@drawable/ic_backup_24"
+        android:title="Chat backup" />
+
+    <Preference
+        android:icon="@drawable/ic_history_24"
+        android:title="Chat history" />
+
+</PreferenceScreen>

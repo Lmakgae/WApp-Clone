@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_navigation"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/chooseCountryFragment"
+        android:name="com.hlogi.wappclone.auth.ui.screen.ChooseCountryFragment"
+        android:label="fragment_choose_country"
+        tools:layout="@layout/fragment_choose_country" />
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.hlogi.wappclone.auth.ui.screen.WelcomeFragment"
+        android:label="WelcomeFragment"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_verifyNoFragment"
+            app:destination="@id/verifyNoFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_profileInfoFragment"
+            app:destination="@id/profileInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifyNoFragment"
+        android:name="com.hlogi.wappclone.auth.ui.screen.VerifyNoFragment"
+        android:label="VerifyNoFragment"
+        tools:layout="@layout/fragment_verify_no">
+        <action
+            android:id="@+id/action_verifyNoFragment_to_chooseCountryFragment"
+            app:destination="@id/chooseCountryFragment" />
+        <action
+            android:id="@+id/action_verifyNoFragment_to_codeFragment"
+            app:destination="@id/codeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/codeFragment"
+        android:name="com.hlogi.wappclone.auth.ui.screen.CodeFragment"
+        android:label="CodeFragment"
+        tools:layout="@layout/fragment_code">
+        <action
+            android:id="@+id/action_codeFragment_to_profileInfoFragment"
+            app:destination="@id/profileInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileInfoFragment"
+        android:name="com.hlogi.wappclone.auth.ui.screen.ProfileInfoFragment"
+        android:label="ProfileInfoFragment"
+        tools:layout="@layout/fragment_profile_info"/>
+</navigation>

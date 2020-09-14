@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.hlogi.wappclone.ui.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_viewProfilePictureFragment"
+            app:destination="@id/viewProfilePictureFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_viewProfileFragment"
+            app:destination="@id/viewProfileFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_messagesFragment"
+            app:destination="@id/messagesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_contactsFragment"
+            app:destination="@id/contactsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_starredMessagesFragment"
+            app:destination="@id/starredMessagesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewProfilePictureFragment"
+        android:name="com.hlogi.wappclone.ui.ViewProfilePictureFragment"
+        android:label="ViewProfilePictureFragment"
+        tools:layout="@layout/fragment_view_profile_picture"/>
+    <fragment
+        android:id="@+id/viewProfileFragment"
+        android:name="com.hlogi.wappclone.chats.ui.screen.ViewProfileFragment"
+        android:label="ViewProfileFragment"
+        tools:layout="@layout/fragment_view_profile">
+        <action
+            android:id="@+id/action_viewProfileFragment_to_viewProfilePictureFragment"
+            app:destination="@id/viewProfilePictureFragment" />
+        <action
+            android:id="@+id/action_viewProfileFragment_to_messagesFragment"
+            app:destination="@id/messagesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/messagesFragment"
+        android:name="com.hlogi.wappclone.chats.ui.screen.MessagesFragment"
+        android:label="MessagesFragment"
+        tools:layout="@layout/fragment_messages">
+        <action
+            android:id="@+id/action_messagesFragment_to_viewProfileFragment"
+            app:destination="@id/viewProfileFragment" />
+        <action
+            android:id="@+id/action_messagesFragment_to_mediaFragment"
+            app:destination="@id/mediaFragment" />
+        <action
+            android:id="@+id/action_messagesFragment_to_sendMediaFragment"
+            app:destination="@id/sendMediaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactsFragment"
+        android:name="com.hlogi.wappclone.contacts.ui.ContactsFragment"
+        android:label="ContactsFragment"
+        tools:layout="@layout/fragment_contacts">
+        <argument
+            android:name="side"
+            app:argType="string"
+            android:defaultValue="Chats" />
+        <action
+            android:id="@+id/action_contactsFragment_to_viewProfileFragment"
+            app:destination="@id/viewProfileFragment" />
+        <action
+            android:id="@+id/action_contactsFragment_to_viewProfilePictureFragment"
+            app:destination="@id/viewProfilePictureFragment" />
+        <action
+            android:id="@+id/action_contactsFragment_to_messagesFragment"
+            app:destination="@id/messagesFragment" />
+        <action
+            android:id="@+id/action_contactsFragment_to_contactsHelpFragment"
+            app:destination="@id/contactsHelpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactsHelpFragment"
+        android:name="com.hlogi.wappclone.contacts.ui.ContactsHelpFragment"
+        android:label="ContactsHelpFragment"
+        tools:layout="@layout/fragment_contacts_help"/>
+    <fragment
+        android:id="@+id/starredMessagesFragment"
+        android:name="com.hlogi.wappclone.starred.StarredMessagesFragment"
+        android:label="StarredMessagesFragment"
+        tools:layout="@layout/fragment_starred_messages">
+        <action
+            android:id="@+id/action_starredMessagesFragment_to_messagesFragment3"
+            app:destination="@id/messagesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mediaFragment"
+        android:name="com.hlogi.wappclone.chats.ui.screen.MediaFragment"
+        android:label="MediaFragment"
+        tools:layout="@layout/fragment_media"/>
+    <fragment
+        android:id="@+id/sendMediaFragment"
+        android:name="com.hlogi.wappclone.chats.ui.screen.SendMediaFragment"
+        android:label="SendMediaFragment"
+        tools:layout="@layout/fragment_send_image_video"/>
+</navigation>

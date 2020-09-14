@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_media_star"
+        android:title="@string/star"
+        android:icon="@drawable/ic_star_24dp"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_media_forward"
+        android:title="@string/forward"
+        android:icon="@drawable/ic_reply_white_24dp"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_media_all_media"
+        android:title="@string/all_media"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_media_show_in_chat"
+        android:title="@string/show_in_chat"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_media_share"
+        android:title="@string/share"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_media_set_as"
+        android:title="@string/set_as"
+        app:showAsAction="never" >
+        <menu >
+            <item android:id="@+id/menu_media_set_as_profile_photo"
+                android:title="@string/my_profile_photo"
+                app:showAsAction="never"  />
+
+            <item android:id="@+id/menu_media_set_as_group_icon"
+                android:title="@string/group_icon"
+                app:showAsAction="never"  />
+
+            <item android:id="@+id/menu_media_set_as_wallpaper"
+                android:title="@string/wallpaper"
+                app:showAsAction="never"  />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/menu_media_view_in_gallery"
+        android:title="@string/view_in_gallery"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_media_rotate"
+        android:title="@string/rotate"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_media_delete"
+        android:title="@string/delete"
+        app:showAsAction="never" />
+
+</menu>

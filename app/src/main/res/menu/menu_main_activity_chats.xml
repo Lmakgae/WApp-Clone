@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--    <item-->
+<!--        android:id="@+id/menu_search_chats"-->
+<!--        android:icon="@drawable/ic_search_white_24dp"-->
+<!--        android:title="@string/search"-->
+<!--        app:actionViewClass="androidx.appcompat.widget.SearchView"-->
+<!--        app:showAsAction="ifRoom" />-->
+
+    <item
+        android:id="@+id/menu_main_new_group"
+        android:title="@string/new_group"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_main_new_broadcast"
+        android:title="@string/new_broadcast"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_main_wapp_web"
+        android:title="@string/wapp_clone_web"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_main_starred_msgs"
+        android:title="@string/starred_messages"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_main_settings"
+        android:title="@string/settings"
+        app:showAsAction="never" />
+
+</menu>

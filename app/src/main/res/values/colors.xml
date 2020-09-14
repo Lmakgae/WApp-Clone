@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#128C7E</color>
+    <color name="colorPrimaryDark">#075E54</color>
+    <color name="colorAccent">#25D366</color>
+    <color name="colorOutgoingChatBubble">#DCF8C6</color>
+    <color name="colorChatBackground">#ECE5DD</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorCheckMarkBlue">#34B7F1</color>
+
+    <color name="colorPrimaryAlternate">#435A64</color>
+    <color name="colorPrimaryDarkAlternate">#36464E</color>
+    <color name="colorAccentAlternate">#2FBDCA</color>
+    <color name="colorOutgoingChatBubbleAlternate">#128C7E</color>
+
+
+    <color name="colorGreen">#55C364</color>
+    <color name="colorGreen2">#76B89C</color>
+    <color name="colorRed">#F33535</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorGreyBlue">#AFD1DF</color>
+    <color name="colorOrange">#FF7D27</color>
+    <color name="colorBlue">#34B7F1</color>
+    <color name="colorGreen3">#0C613C</color>
+    <color name="colorTransparent">#00FFFFFF</color>
+
+    <color name="colorGrey">#808080</color>
+    <color name="colorPurple">#8536F4</color>
+
+</resources>

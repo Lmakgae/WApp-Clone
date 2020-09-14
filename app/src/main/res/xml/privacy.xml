@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
+        android:layout_width="match_parent"
+        android:fitsSystemWindows="true"
+        android:summary="If you don't share your Last Seen, you won't be able to see other people's Last Seen"
+        app:allowDividerBelow="true"
+        app:iconSpaceReserved="false"
+        app:key="privacy_category"
+        app:title="Who can see my personal info">
+
+        <ListPreference
+            android:defaultValue="everyone"
+            android:entries="@array/privacy_entries"
+            android:entryValues="@array/privacy_values"
+            android:key="last_seen_key"
+            android:title="Last seen"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true" />
+        <ListPreference
+            android:defaultValue="everyone"
+            android:entries="@array/privacy_entries"
+            android:entryValues="@array/privacy_values"
+            android:key="profile_photo_key"
+            android:title="@string/profile_photo"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true" />
+        <ListPreference
+            android:defaultValue="everyone"
+            android:entries="@array/privacy_entries"
+            android:entryValues="@array/privacy_values"
+            android:key="about_key"
+            android:title="About"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="read_receipts_key"
+            android:summary="If turn off, you won't send or receive Read receipts. Read receipts are always sent for group chats"
+            android:title="Read receipts"
+            app:allowDividerAbove="true"
+            app:allowDividerBelow="true"
+            app:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

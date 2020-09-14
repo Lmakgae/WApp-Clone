@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_share_view_profile"
+        android:title="@string/share"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_edit_view_profile"
+        android:title="@string/edit"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_view_in_add_book_view_profile"
+        android:title="@string/view_in_address_book"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_verify_sec_code_view_profile"
+        android:title="@string/verify_security_code"
+        app:showAsAction="never" />
+
+</menu>

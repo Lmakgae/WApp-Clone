@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContactsAccountType xmlns:android="http://schemas.android.com/apk/res/android">
+    <ContactsDataKind
+        android:mimeType="vnd.android.cursor.item/com.hlogi.wappclone.message"
+        android:icon="@drawable/ic_call_green_24dp"
+        android:summaryColumn="data2"
+        android:detailColumn="data3"/>
+    <ContactsDataKind
+        android:mimeType="vnd.android.cursor.item/com.hlogi.wappclone.voice"
+        android:icon="@drawable/ic_call_green_24dp"
+        android:summaryColumn="data2"
+        android:detailColumn="data3"/>
+    <ContactsDataKind
+        android:mimeType="vnd.android.cursor.item/com.hlogi.wappclone.video"
+        android:icon="@drawable/ic_call_green_24dp"
+        android:summaryColumn="data2"
+        android:detailColumn="data3"/>
+</ContactsAccountType>

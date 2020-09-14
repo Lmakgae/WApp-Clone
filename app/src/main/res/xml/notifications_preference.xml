@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:layout_width="match_parent"
+        android:defaultValue="true"
+        android:key="conversation_tones_key"
+        android:summary="Play sounds for incoming and outgoing messages."
+        android:title="Conversation tones"
+        app:allowDividerBelow="true"
+        app:iconSpaceReserved="false" />
+    <PreferenceCategory
+        android:title="Messages"
+        app:key="messages_category"
+        app:iconSpaceReserved="false">
+
+        <ListPreference
+            android:defaultValue="default"
+            android:entries="@array/vibrate_entries"
+            android:entryValues="@array/vibrate_values"
+            android:key="messages_vibrate_key"
+            android:title="Vibrate"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            android:defaultValue="no_popup"
+            android:entries="@array/pop_up_entries"
+            android:entryValues="@array/pop_up_values"
+            android:key="messages_pop_up_key"
+            android:title="Popup notification"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            android:defaultValue="none"
+            android:entries="@array/light_entries"
+            android:entryValues="@array/light_values"
+            android:key="messages_light_key"
+            android:title="Light"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="messages_high_priority_key"
+            android:summary="Show previews of notifications at the top of the screen"
+            android:title="Use high priority notifications"
+            app:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Groups"
+        app:key="groups_category"
+        app:iconSpaceReserved="false">
+
+        <ListPreference
+            android:defaultValue="default"
+            android:entries="@array/vibrate_entries"
+            android:entryValues="@array/vibrate_values"
+            android:key="groups_vibrate_key"
+            android:title="Vibrate"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true"/>
+
+        <ListPreference
+            android:defaultValue="no_popup"
+            android:entries="@array/pop_up_entries"
+            android:entryValues="@array/pop_up_values"
+            android:key="groups_pop_up_key"
+            android:title="Popup notification"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true"/>
+
+        <ListPreference
+            android:defaultValue="none"
+            android:entries="@array/light_entries"
+            android:entryValues="@array/light_values"
+            android:key="groups_light_key"
+            android:title="Light"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true"/>
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="groups_high_priority_key"
+            android:summary="Show previews of notifications at the top of the screen"
+            app:iconSpaceReserved="false"
+            android:title="Use high priority notifications" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Calls"
+        app:key="calls_category"
+        app:iconSpaceReserved="false">
+
+        <ListPreference
+            android:defaultValue="default"
+            android:entries="@array/vibrate_entries"
+            android:entryValues="@array/vibrate_values"
+            android:key="calls_vibrate_key"
+            android:title="Vibrate"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true"/>
+
+    </PreferenceCategory>
+</PreferenceScreen>

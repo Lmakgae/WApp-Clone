@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!--TODO: Sort the privacy settings        -->
+        <import type="android.view.View" />
+        <variable
+            name="number"
+            type="String" />
+        <variable
+            name="privacy"
+            type="String" />
+        <variable
+            name="typing"
+            type="Boolean" />
+        <variable
+            name="recording"
+            type="Boolean" />
+        <variable
+            name="conversation"
+            type="com.hlogi.wappclone.chats.data.model.ChatConversation" />
+        <variable
+            name="last_message"
+            type="com.hlogi.wappclone.chats.data.model.Message" />
+        <variable
+            name="contact"
+            type="com.hlogi.wappclone.contacts.data.model.Contact" />
+        <variable
+            name="unread_counter"
+            type="int" />
+        <variable
+            name="unread_counter_string"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/display_pic_img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/circular_bg"
+            android:backgroundTint="#E1E1E1"
+            app:imageUrl="@{contact.profile_photo_url}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:placeholder="@{@drawable/ic_person_24dp}"
+            tools:src="@drawable/ic_person_24dp" />
+
+        <TextView
+            android:id="@+id/display_name_tv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_vertical"
+            android:textAlignment="gravity"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/text_line_groups"
+            app:layout_constraintEnd_toStartOf="@+id/time"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/display_pic_img"
+            app:layout_constraintTop_toTopOf="@+id/display_pic_img"
+            tools:text="Lehlogonolo Makgae" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="2dp"
+            android:textSize="12sp"
+            app:chat_time="@{conversation.last_update}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/display_name_tv"
+            app:layout_constraintBottom_toBottomOf="@+id/display_name_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/display_name_tv"
+            tools:text="Yesterday" />
+
+        <ImageView
+            android:id="@+id/counter"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/green_circular_bg"
+            android:backgroundTint="?attr/colorAccent"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/time" />
+
+        <TextView
+            android:id="@+id/counter_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{unread_counter_string}"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/counter"
+            app:layout_constraintEnd_toEndOf="@+id/counter"
+            app:layout_constraintStart_toStartOf="@+id/counter"
+            app:layout_constraintTop_toTopOf="@+id/counter"
+            app:layout_constraintVertical_bias="0.5"
+            tools:text="10" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="16dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/display_name_tv" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/text_only_group"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="8dp"
+            android:visibility="gone"
+            app:constraint_referenced_ids="first_msg_tv"
+            app:layout_constraintBottom_toBottomOf="@+id/display_pic_img"
+            app:layout_constraintEnd_toStartOf="@+id/counter"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/display_pic_img"
+            app:layout_constraintTop_toBottomOf="@+id/display_name_tv"
+            tools:visibility="gone" />
+
+        <TextView
+            android:id="@+id/first_msg_tv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/display_pic_img"
+            app:layout_constraintEnd_toStartOf="@+id/counter"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/display_pic_img"
+            app:layout_constraintTop_toBottomOf="@+id/display_name_tv"
+            tools:text="This is a text example, this is a text example." />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/ic_text_group"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="8dp"
+            android:visibility="gone"
+            app:constraint_referenced_ids="ic_text_ic_iv,second_msg_tv"
+            app:layout_constraintBottom_toBottomOf="@+id/display_pic_img"
+            app:layout_constraintEnd_toStartOf="@+id/counter"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/display_pic_img"
+            app:layout_constraintTop_toBottomOf="@+id/display_name_tv"
+            tools:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_text_ic_iv"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="24dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/display_pic_img"
+            app:layout_constraintStart_toEndOf="@+id/display_pic_img"
+            app:layout_constraintTop_toBottomOf="@+id/display_name_tv"
+            tools:srcCompat="@drawable/ic_sent_grey_24dp" />
+
+        <TextView
+            android:id="@+id/second_msg_tv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/display_pic_img"
+            app:layout_constraintEnd_toStartOf="@+id/counter"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ic_text_ic_iv"
+            app:layout_constraintTop_toBottomOf="@+id/display_name_tv"
+            tools:text="This is a text example, this is a text example." />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/ic_ic_text_group"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="8dp"
+            android:visibility="gone"
+            app:constraint_referenced_ids="first_ic_iv,second_ic_iv,third_msg_tv"
+            app:layout_constraintBottom_toBottomOf="@+id/display_pic_img"
+            app:layout_constraintEnd_toStartOf="@+id/counter"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/display_pic_img"
+            app:layout_constraintTop_toBottomOf="@+id/display_name_tv"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/first_ic_iv"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="24dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/display_pic_img"
+            app:layout_constraintEnd_toStartOf="@+id/second_ic_iv"
+            app:layout_constraintStart_toEndOf="@+id/display_pic_img"
+            app:layout_constraintTop_toBottomOf="@+id/display_name_tv"
+            tools:srcCompat="@drawable/ic_sent_grey_24dp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/second_ic_iv"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="4dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/display_pic_img"
+            app:layout_constraintStart_toEndOf="@+id/first_ic_iv"
+            app:layout_constraintTop_toBottomOf="@+id/display_name_tv"
+            tools:srcCompat="@drawable/ic_photo_media_ic_24dp" />
+
+        <TextView
+            android:id="@+id/third_msg_tv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/display_pic_img"
+            app:layout_constraintEnd_toStartOf="@+id/counter"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/second_ic_iv"
+            app:layout_constraintTop_toBottomOf="@+id/display_name_tv"
+            tools:text="Photo" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/text_line_groups"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="8dp"
+            app:constraint_referenced_ids="ic_ic_text_group,ic_text_group,text_only_group"
+            app:layout_constraintBottom_toBottomOf="@+id/display_pic_img"
+            app:layout_constraintEnd_toStartOf="@+id/counter"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/display_pic_img"
+            app:layout_constraintTop_toBottomOf="@+id/display_name_tv"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/contact_status_tv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorAccent"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/display_pic_img"
+            app:layout_constraintEnd_toStartOf="@+id/counter"
+            app:layout_constraintHorizontal_bias="0.136"
+            app:layout_constraintStart_toEndOf="@+id/display_pic_img"
+            app:layout_constraintTop_toBottomOf="@+id/display_name_tv"
+            tools:text="typing..."
+            tools:visibility="invisible" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

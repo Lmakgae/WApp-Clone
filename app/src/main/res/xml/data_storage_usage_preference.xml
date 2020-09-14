@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:title="Usage"
+        app:key="usage_category"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            android:title="Network usage"
+            app:summary="xx.x MB sent  xx.x MB received"
+            app:iconSpaceReserved="false"/>
+        <Preference
+            android:title="Storage usage"
+            app:summary="xxx.x MB "
+            app:iconSpaceReserved="false"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Media auto-download"
+        app:key="media_auto_download_category"
+        android:summary="Voice messages are always auto-downloaded for the best communication experience"
+        app:iconSpaceReserved="false">
+
+        <MultiSelectListPreference
+            android:entries="@array/media_entries"
+            android:entryValues="@array/media_values"
+            android:key="mobile_data_key"
+            android:title="When using mobile data"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true"/>
+
+        <MultiSelectListPreference
+            android:entries="@array/media_entries"
+            android:entryValues="@array/media_values"
+            android:key="on_wifi_key"
+            android:title="When connected on Wi-Fi"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true"/>
+
+        <MultiSelectListPreference
+            android:entries="@array/media_entries"
+            android:entryValues="@array/media_values"
+            android:key="roaming_key"
+            android:title="When roaming"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Call settings"
+        app:key="call_settings_category"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="low_data_usage_key"
+            android:summary="Reduce the data used in a call"
+            android:title="Low data usage"
+            app:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
