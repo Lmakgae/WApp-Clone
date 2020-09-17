@@ -96,18 +96,11 @@ public class MediaMessageWork extends Worker {
     @Override
     public void onStopped() {
         super.onStopped();
-        Log.e(TAG, "onStopped: Stopped started");
         switch (action) {
             case WorkConstants.ACTION_RECEIVE_MEDIA:
-                Log.e(TAG, "onStopped: download");
                 if (downloadTask != null) {
                     if (downloadTask.isInProgress()) {
-                        Log.e(TAG, "onStopped: download in progress");
-                        if (downloadTask.pause()) {
-                            Log.e(TAG, "onStopped: download stopped");
-                        } else {
-                            Log.e(TAG, "onStopped: download did NOT stop");
-                        }
+                        downloadTask.pause();
                     }
                 }
                 break;
@@ -225,7 +218,7 @@ public class MediaMessageWork extends Worker {
             Uri fileUri = Uri.parse(file_name_path);
 
             if (Objects.equals(fileUri.getScheme(), "file")){
-                localFile = new File(file_name_path);
+                localFile = new File(fileUri.getPath());
             } else if (Objects.equals(fileUri.getScheme(), "content")) {
                 switch (media_type) {
                     case Message.MEDIA_PHOTO:
@@ -238,8 +231,6 @@ public class MediaMessageWork extends Worker {
                         throw new IllegalStateException("Unexpected value: " + media_type);
                 }
             }
-
-            assert localFile != null;
 
             uploadTask = uploadTask(mediaRef, localFile, uploadUriSession).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                 @Override

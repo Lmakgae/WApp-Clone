@@ -385,12 +385,13 @@ public class MessagesFragment extends Fragment {
                 }
 
                 assert vnFile != null;
-                file = vnFile.getAbsolutePath();
+                file = vnFile.toURI().toString();
+                String filePath = vnFile.getAbsolutePath();
 
                 mediaRecorder = new MediaRecorder();
                 mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
                 mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.AAC_ADTS);
-                mediaRecorder.setOutputFile(file);
+                mediaRecorder.setOutputFile(filePath);
                 mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
 
                 try {
@@ -401,7 +402,6 @@ public class MessagesFragment extends Fragment {
                 }
 
                 mediaRecorder.start();
-                vnFile = null;
                 contactsViewModel.setUserRecordingStatus(true);
             }
 

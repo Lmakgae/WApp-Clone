@@ -52,6 +52,7 @@ public class SettingsViewModel extends ViewModel {
 
     public void uploadProfilePicture(@NonNull String file, Context context) {
         Data mediaMessageData = new Data.Builder()
+                .putString(WorkConstants.ARG_KEY_ACTION, WorkConstants.ACTION_UPDATE_PROFILE_PICTURE)
                 .putString(WorkConstants.ARG_KEY_FILE_NAME, file)
                 .build();
 
